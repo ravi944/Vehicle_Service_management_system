@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #333333;
+        }
+        
+        form {
+            margin: 20px auto;
+            width: 300px;
+        }
+        
+        label {
+            display: block;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        /* button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        } */
+        
+        .message {
+            color: red;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Search</h1>
+    <% if (typeof message !== 'undefined') { %>
+        <p class="message"><%= message %></p>
+    <% } %>
+    <form method="POST" action="/search">
+        <label for="reg_no">Registration Number:</label>
+        <input type="text" id="reg_no" name="reg_no" required>
+        <br>
+        <button type="submit">Search</button>
+    </form>
+    <% if (typeof username !== 'undefined') { %>
+        <h2>Search Result:</h2>
+        <p>Name: <%= username %></p>
+        <p>Phone Number: <%= phone_no %></p>
+        <p>Service Status: <%= status %></p>
+    <% } %>
+
+    <button class="button" onclick="location.href='/'">Back to homepage</button>
+</body>
+</html>
